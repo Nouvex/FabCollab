@@ -1,43 +1,29 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  .layout {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-  header {
-    background-color: #fff;
-    border-bottom: 1px solid #000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-  }
-  
-  .logo {
-    font-size: 1.5rem;
-  }
-  
-  nav a {
-    margin: 0 1rem;
-    text-decoration: none;
-    color: #000;
-    border: 1px solid #000;
-    padding: 0.5rem;
-  }
-  
-  .user-icon {
-    font-size: 1.5rem;
-  }
-  
-  main {
-    flex: 1;
-    padding: 2rem;
-    background-color: #f0f0f0;
-  }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #e9f7ef; /* Heller Grün-Hintergrund */
+  color: #343A40; /* Dunkelgrau */
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 2.5rem; /* Höhe des Footers */
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+  background-color: #FFFFFF; /* Weiß */
+  border: 1px solid #DCDCDC; /* Leichte Umrandung */
+  border-radius: 8px; /* Abgerundete Ecken */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+  margin: 1rem auto;
+  max-width: 1600px; /* Erhöht die maximale Breite */
+  width: calc(100% - 2rem);
+}

@@ -1,21 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Navbar from '../../components/Navbar/Navbar';
+import Footer from '../../components/Footer/Footer';
 import './Layout.css';
 
 const Layout = ({ children }) => {
+  console.log("Rendering Layout");
   return (
     <div className="layout">
-      <header>
-        <div className="logo">FabCollab</div>
-        <nav>
-          <Link to="/">Start</Link>
-          <Link to="/forum">Forum</Link>
-        </nav>
-        <div className="user-icon">👤</div>
-      </header>
+      <Navbar />
       <main>
         {children}
       </main>
+      <Footer />
     </div>
   );
 };

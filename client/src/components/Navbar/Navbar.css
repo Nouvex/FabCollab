@@ -1,0 +1,35 @@
+.navbar {
+    background-color: #007BFF; /* Blau */
+    border-bottom: 1px solid #0056b3; /* Dunkelblau */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    color: #FFFFFF; /* Weiß */
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: center; /* Zentriert die Links */
+    flex: 1;
+  }
+  
+  nav a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: #FFFFFF; /* Weiß */
+    padding: 0.5rem;
+    transition: background-color 0.3s;
+  }
+  
+  nav a:hover {
+    background-color: #0056b3; /* Dunkelblau */
+  }
+  
+  .user-icon {
+    font-size: 1.5rem;
+  }

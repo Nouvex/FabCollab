@@ -1,0 +1,15 @@
+.forum {
+    text-align: center;
+    padding: 2rem;
+    background-color: #FFFFFF; /* Weiß */
+  }
+  
+  .forum h2 {
+    color: #28A745; /* Grün */
+    margin-bottom: 1rem;
+  }
+  
+  .forum p {
+    color: #6C757D; /* Hellgrau */
+    margin-bottom: 2rem;
+  }
