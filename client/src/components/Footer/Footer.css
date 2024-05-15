@@ -1,10 +1,10 @@
 .footer {
-    background-color: #007BFF; /* Blau */
-    color: #FFFFFF; /* Weiß */
-    text-align: center;
-    padding: 1rem;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    border-top: 1px solid #0056b3; /* Dunkelblau */
-  }
+  background-color: #28A745; /* Primärgrün */
+  color: #FFFFFF; /* Weiß */
+  text-align: center;
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid #218838; /* Dunkelgrün */
+}

@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #e9f7ef; /* Heller Grün-Hintergrund */
+  background-color: #e9f7ef; /* Hellgrün */
   color: #343A40; /* Dunkelgrau */
   min-height: 100vh;
   position: relative;
@@ -19,11 +19,12 @@ body {
 main {
   flex: 1;
   padding: 2rem;
-  background-color: #FFFFFF; /* Weiß */
-  border: 1px solid #DCDCDC; /* Leichte Umrandung */
-  border-radius: 8px; /* Abgerundete Ecken */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
-  margin: 1rem auto;
-  max-width: 1600px; /* Erhöht die maximale Breite */
-  width: calc(100% - 2rem);
+  background-color: #e9f7ef; /* Hellgrün, gleiche Farbe wie der Hintergrund */
+  /* Entfernt den weißen Kasten */
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0 auto;
+  max-width: 100%; /* Erhöht die maximale Breite */
+  width: 100%;
 }
