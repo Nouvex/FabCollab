@@ -1,29 +1,102 @@
+/* client/src/pages/LandingPage/LandingPage.css */
 .landing-page {
-  text-align: center;
   padding: 2rem;
-  background-color: #e9f7ef; /* Hellgrün, gleiche Farbe wie der Hintergrund */
+  background-color: #e9f7ef; /* Hellgrün */
 }
 
-.landing-page h2 {
+h2 {
   color: #28A745; /* Primärgrün */
-  margin-bottom: 1rem;
+  text-align: center;
 }
 
-.landing-page p {
+p {
   color: #6C757D; /* Grau */
-  margin-bottom: 2rem;
+  text-align: center;
 }
 
-.learn-more {
+.search-section {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.search-input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #DCDCDC; /* Hellgrau */
+  border-radius: 4px 0 0 4px;
+  width: 300px;
+}
+
+.search-button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #DCDCDC; /* Hellgrau */
+  border-left: none;
+  border-radius: 0 4px 4px 0;
   background-color: #28A745; /* Primärgrün */
   color: #FFFFFF; /* Weiß */
-  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #218838; /* Dunkelgrün */
+}
+
+.tags-section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+
+.tag-button {
+  background-color: #28A745; /* Primärgrün */
+  color: #FFFFFF; /* Weiß */
   border: none;
+  padding: 0.5rem 1rem;
+  margin: 0.25rem;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
-.learn-more:hover {
+.tag-button:hover {
   background-color: #218838; /* Dunkelgrün */
+}
+
+.content-section {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+
+.results-section {
+  flex: 3;
+  max-height: 500px; /* Höhe des Containers anpassen, um 4 Ergebnisse anzuzeigen */
+  overflow-y: auto;
+  border: 1px solid #DCDCDC; /* Hellgrau */
+  border-radius: 4px;
+  padding: 1rem;
+  background-color: #FFFFFF; /* Weiß */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+}
+
+.result-item {
+  background-color: #FFFFFF; /* Weiß */
+  border: 1px solid #DCDCDC; /* Hellgrau */
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+}
+
+.info-section {
+  flex: 1;
+  background-color: #FFA500; /* Orange */
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+  margin-left: 2rem;
+  color: #FFFFFF; /* Weiß */
 }
