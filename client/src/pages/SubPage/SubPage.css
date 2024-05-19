@@ -14,3 +14,42 @@
     margin-bottom: 2rem;
   }
   
+  .therapist-ad {
+    background-color: #f0f0f0; /* Hellgrauer Hintergrund */
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+  }
+  
+  .content {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .image-container {
+    flex: 1;
+    max-width: 150px;
+    margin-right: 20px;
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .info {
+    flex: 2;
+  }
+  
+  .info h2 {
+    margin: 0 0 10px 0;
+  }
+  
+  .info p {
+    margin: 5px 0;
+  }
+  
+  .description {
+    margin-top: 20px;
+  }
