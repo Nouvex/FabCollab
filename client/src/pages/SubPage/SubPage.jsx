@@ -55,7 +55,7 @@ const Forum = () => {
           </div>
           {/* Weitere Kommentare können hier hinzugefügt werden */}
         </div>
-        <p>Read more: <a href="https://www.forumwebsite.de" target="_blank" rel="noopener noreferrer">Forum</a>.</p>
+          <button className="tag-button">Go to Forum</button>
       </div>
     </div>
     </div>
