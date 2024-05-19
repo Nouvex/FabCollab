@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Layout from './pages/Layout/Layout';
 import LandingPage from './pages/LandingPage/LandingPage';
 import Forum from './pages/Forum/Forum';
+import SubPage from './pages/SubPage/SubPage';
 
 function App() {
   console.log("Rendering App");
