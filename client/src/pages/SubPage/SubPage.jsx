@@ -7,7 +7,7 @@ const Forum = () => {
       <div className="therapist-ad">
       <div className="content">
         <div className="image-container">
-          <img src={therapeut} alt="Therapeut Logo" className="logo-therapeut" />
+          <img src="path/to/image.jpg" alt="Therapist" />
         </div>
         <div className="info">
           <h2>Praxisname</h2>
