@@ -11,7 +11,7 @@ const Navbar = () => {
         <img src={logo} alt="FabCollab Logo" className="logo-image" />
       </div>
       <nav>
-        <Link to="/">Start</Link>
+        <Link to="/sub">Sub</Link>
         <Link to="/forum">Forum</Link>
       </nav>
       <div className="user-icon">👤</div>
