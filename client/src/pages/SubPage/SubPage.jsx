@@ -1,5 +1,6 @@
 import React from 'react';
 import './SubPage.css';
+import therapeut from '../../assets/therapeut.jpg';
 
 const Forum = () => {
   return (
@@ -7,7 +8,7 @@ const Forum = () => {
       <div className="therapist-ad">
       <div className="content">
         <div className="image-container">
-          <img src="path/to/image.jpg" alt="Therapist" />
+          <img src={therapeut} alt="Therapist" />
         </div>
         <div className="info">
           <h2>Praxisname</h2>
