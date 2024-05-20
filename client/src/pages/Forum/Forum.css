@@ -120,8 +120,12 @@ body {
   margin-bottom: 10px;
 }
 
-.post-header h4 {
+.post-header h2 {
   margin: 0;
+}
+
+.post p {
+  text-align: left;
 }
 
 .post-header small {
@@ -130,8 +134,13 @@ body {
 
 .post-footer {
   display: flex;
-  justify-content: space-around;
   margin-top: 10px;
+  align-items: left;
+}
+
+.post-footer button {
+  margin-right: 20px;
+  color: #28A745;
 }
 
 .right-column .motivational-quote, .right-column .info-box, .left-column .box {

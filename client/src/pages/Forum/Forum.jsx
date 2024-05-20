@@ -48,7 +48,7 @@ const Forum = () => {
           <div className="post">
             <div className="post-header">
               <h2>Lion-987</h2>
-              <small>two hours ago</small>
+              <small>2 hours ago</small>
             </div>
             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
             <div className="post-footer">
