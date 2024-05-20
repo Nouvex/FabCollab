@@ -13,3 +13,146 @@
   color: #6C757D; /* Grau */
   margin-bottom: 2rem;
 }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.left-column, .right-column {
+  width: 20%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.middle-column {
+  width: 60%;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.box {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px 0 0 10px;
+  box-sizing: border-box;
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  background-color: #28A745;
+  color: #fff;
+  border-radius: 0 10px 10px 0;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #28A745;
+}
+
+.new-post {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.new-post textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.new-post button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #28A745;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.new-post button:hover {
+  background-color: #28A745;
+}
+
+.post {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.post-header h4 {
+  margin: 0;
+}
+
+.post-header small {
+  color: #777;
+}
+
+.post-footer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.right-column .motivational-quote, .right-column .info-box, .left-column .box {
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.topic-list, .settings {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.topic-list li, .settings li {
+  margin-bottom: 10px;
+}
+
+.topic-list li a, .settings li a {
+  text-decoration: none;
+  color: #28A745;
+}
+
+.topic-list li a:hover, .settings li a:hover {
+  text-decoration: underline;
+}
