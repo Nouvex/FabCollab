@@ -24,6 +24,9 @@ body {
   height: 100vh;
 }
 
+.left-column {
+  margin-left: -20px;
+}
 .left-column, .right-column {
   width: 20%;
   padding: 20px;
