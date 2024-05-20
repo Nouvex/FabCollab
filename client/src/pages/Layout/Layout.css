@@ -1,3 +1,4 @@
+/* client/src/pages/Layout/Layout.css */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -6,6 +7,7 @@ body {
   background-color: #e9f7ef; /* Hellgrün */
   color: #343A40; /* Dunkelgrau */
   min-height: 100vh;
+  overflow-x: hidden; /* Verhindert horizontales Scrollen */
   position: relative;
   padding-bottom: 2.5rem; /* Höhe des Footers */
 }
@@ -14,17 +16,17 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; /* Verhindert horizontales Scrollen */
 }
 
 main {
   flex: 1;
   padding: 2rem;
-  background-color: #e9f7ef; /* Hellgrün, gleiche Farbe wie der Hintergrund */
-  /* Entfernt den weißen Kasten */
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
+  background-color: #e9f7ef; /* Hellgrün */
   margin: 0 auto;
-  max-width: 100%; /* Erhöht die maximale Breite */
   width: 100%;
+  max-width: 1800px; /* Erhöhte maximale Breite */
+  box-sizing: border-box;
 }

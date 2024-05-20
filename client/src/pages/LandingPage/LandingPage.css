@@ -2,6 +2,7 @@
 .landing-page {
   padding: 2rem;
   background-color: #e9f7ef; /* Hellgrün */
+  overflow-x: hidden; /* Verhindert horizontales Scrollen */
 }
 
 h2 {
@@ -69,20 +70,23 @@ p {
   display: flex;
   justify-content: space-between;
   margin: 2rem 0;
+  width: 100%;
 }
 
 .results-section {
   flex: 3;
-  max-height: 500px; /* Höhe des Containers anpassen, um 4 Ergebnisse anzuzeigen */
+  max-height: 600px; /* Höhe des Containers anpassen, um 3 Ergebnisse anzuzeigen */
   overflow-y: auto;
   border: 1px solid #DCDCDC; /* Hellgrau */
   border-radius: 4px;
   padding: 1rem;
   background-color: #FFFFFF; /* Weiß */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+  width: calc(100% - 400px); /* Verfügbarer Platz, wenn die Info-Section 400px breit ist */
 }
 
 .result-item {
+  display: flex;
   background-color: #FFFFFF; /* Weiß */
   border: 1px solid #DCDCDC; /* Hellgrau */
   padding: 1rem;
@@ -91,12 +95,55 @@ p {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
 }
 
+.result-image img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+
+.result-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.show-more-button {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #28A745; /* Primärgrün */
+  color: #FFFFFF; /* Weiß */
+  cursor: pointer;
+  text-align: center;
+}
+
+.show-more-button:hover {
+  background-color: #218838; /* Dunkelgrün */
+}
+
 .info-section {
   flex: 1;
-  background-color: #FFA500; /* Orange */
+  max-width: 400px;
+  background-color: #FF5733; /* Alternative Farbe für Notfall Hilfe */
   padding: 1rem;
   border-radius: 4px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
   margin-left: 2rem;
   color: #FFFFFF; /* Weiß */
+}
+
+/* Fixiert den Footer unten */
+.footer {
+  background-color: #28A745; /* Primärgrün */
+  color: #FFFFFF; /* Weiß */
+  text-align: center;
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid #218838; /* Dunkelgrün */
 }
