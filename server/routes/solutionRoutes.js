@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Solution = require('../data/Solutions');
 
+
 // GET all solutions
 router.get('/', async (req, res) => {
   const solutions = await Solution.findAll();
@@ -38,6 +39,17 @@ router.delete('/:id', async (req, res) => {
     where: { id: req.params.id }
   });
   res.send('Solution deleted');
+});
+
+
+router.get('/test/:tagName', async (req, res) => {
+  const tagName = req.params.tagName;
+  try {
+      const solutions = await Solutions.getSolutionsForTag(tagName);
+      res.json(solutions);
+  } catch (error) {
+      res.status(500).json({ error: 'Internal server error' });
+  }
 });
 
 module.exports = router;

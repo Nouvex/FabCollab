@@ -28,3 +28,16 @@ Post.init({
 });
 
 module.exports = Post;
+
+
+
+async function findAll() {
+    try {
+        // Verwende die Sequelize-Methode findAll(), um alle Benutzer aus der Datenbank abzurufen
+        const posts = await Post.findAll();
+        return posts; // Gib die abgerufenen Benutzer zurück
+    } catch (error) {
+        console.error('Fehler beim Abrufen aller Posts:', error);
+        throw error; // Wirf den Fehler weiter, um ihn an den Aufrufer zu propagieren
+    }
+}

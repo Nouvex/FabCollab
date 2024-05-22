@@ -1,7 +1,16 @@
 const { Sequelize, DataTypes, Model } = require('sequelize');
+const Solutions = require('./Solutions.js')
+const SolutionTag = require('./SolutionTag.js');
 const sequelize = require('../database.js');
 
-class Tag extends Model {}
+
+class Tag extends Model {
+    static associate(models) {
+        // Ein Tag kann zu vielen Lösungen gehören
+        this.belongsToMany(Solutions, { through: SolutionTag });
+    }
+}
+
 
 Tag.init({
     id: {
@@ -37,3 +46,21 @@ async function findAll() {
         throw error; // Wirf den Fehler weiter, um ihn an den Aufrufer zu propagieren
     }
 }
+
+
+async function findOne(tagName) {
+    try {
+        
+
+        const tag = await Tag.findOne({
+            where: {
+                name: tagName
+            }
+        });
+        return tag;
+    } catch (error) {
+        console.error('Fehler beim Abrufen des Tags:', error);
+        throw error;
+    }
+}
+
