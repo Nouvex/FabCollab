@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt');
 const { Sequelize, DataTypes, Model } = require('sequelize');
-const sequelize = new Sequelize('database', 'username', 'password', { host: 'localhost', dialect: 'postgres' }); // Replace with your database credentials
+const sequelize =require('../database.js'); // Replace with your database credentials
 
 class User extends Model {
     async comparePassword(password) {
@@ -20,6 +20,10 @@ User.init({
         unique: true
     },
     password: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    email: {
         type: DataTypes.STRING,
         allowNull: false
     }

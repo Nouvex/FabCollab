@@ -1,5 +1,5 @@
 const { Sequelize, DataTypes, Model } = require('sequelize');
-const sequelize = new Sequelize('database', 'username', 'password', { host: 'localhost', dialect: 'postgres' });
+const sequelize = require('../database.js');
 
 class Post extends Model {}
 
@@ -13,7 +13,7 @@ Post.init({
         type: DataTypes.STRING,
         allowNull: false
     },
-    user: {
+    username: {
         type: DataTypes.STRING,
         allowNull: false
     },
