@@ -1,12 +1,21 @@
 const express = require('express');
 const router = express.Router();
-const User = require('./data/User');
+const User = require('../data/Users');
+const Users = require('../data/Users');
 
-// GET all users
+
+// GET Route für alle Benutzer
 router.get('/', async (req, res) => {
-  const users = await User.findAll();
-  res.json(users);
+  try {
+      const users = await Users.findAll();
+      res.json(users);
+  } catch (error) {
+      res.status(500).json({ error: 'Fehler beim Abrufen aller Benutzer' });
+  }
 });
+
+
+
 
 // GET a single user by ID
 router.get('/:id', async (req, res) => {

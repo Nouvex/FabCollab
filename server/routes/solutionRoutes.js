@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Solution = require('./Solution');
+const Solution = require('../data/Solutions');
 
 // GET all solutions
 router.get('/', async (req, res) => {

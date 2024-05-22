@@ -15,7 +15,8 @@ Search.init({
 }, {
     sequelize,
     modelName: 'Search',
-    tableName: 'searches'
+    tableName: 'searches',
+    timestamps: false
 });
 
 module.exports = Search;

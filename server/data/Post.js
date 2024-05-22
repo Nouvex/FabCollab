@@ -23,7 +23,8 @@ Post.init({
 }, {
     sequelize,
     modelName: 'Post',
-    tableName: 'posts'
+    tableName: 'posts',
+    timestamps: false
 });
 
 module.exports = Post;
