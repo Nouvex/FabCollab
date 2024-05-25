@@ -55,7 +55,7 @@ const Forum = () => {
       <div className="middle-column">
         <div className="search-bar">
           <input type="text" placeholder="Search..." />
-          <button>Search</button>
+          <button>Suche</button>
         </div>
         <div className="new-post">
           <textarea placeholder="Write something..."></textarea>
@@ -65,39 +65,57 @@ const Forum = () => {
         <div className="posts"> <div className="post">
           <div className="post-header">
             <h2>Pelican-245</h2>
-            <small>one hour ago</small>
+            <small>vor 1 Stunde</small>
           </div>
           <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
           <div className="post-footer">
+              <div className="counts">
+                <span>234 Likes</span>
+                <span>109 Kommentare</span>
+              </div>
+          <div>
             <button>Like</button>
-            <button>Comment</button>
-            <button>Report</button>
+            <button>Kommentieren</button>
+            <button>Melden</button>
           </div>
+        </div>
         </div>
           <div className="post">
             <div className="post-header">
               <h2>Lion-987</h2>
-              <small>2 hours ago</small>
+              <small>vor 2 Stunden</small>
             </div>
             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
             <div className="post-footer">
-              <button>Like</button>
-              <button>Comment</button>
-              <button>Report</button>
-            </div>
+            <div className="counts">
+                <span>198 Likes</span>
+                <span>20 Kommentare</span>
+              </div>
+          <div>
+            <button>Like</button>
+            <button>Kommentieren</button>
+            <button>Melden</button>
           </div>
+        </div>
+        </div>
           <div className="post">
             <div className="post-header">
               <h2>Turtle-874</h2>
-              <small>3 hours ago</small>
+              <small>vor 3 Stunden</small>
             </div>
             <p>Dies ist noch ein weiterer Beispieltext für einen Post.</p>
             <div className="post-footer">
-              <button>Like</button>
-              <button>Comment</button>
-              <button>Report</button>
-            </div>
+            <div className="counts">
+                <span>92 Likes</span>
+                <span>53 Kommentare</span>
+              </div>
+          <div>
+            <button>Like</button>
+            <button>Kommentieren</button>
+            <button>Melden</button>
           </div>
+        </div>
+        </div>
           <div className="post">
             <div className="post-header">
               <h2>User Name</h2>
@@ -105,11 +123,17 @@ const Forum = () => {
             </div>
             <p>Dies ist noch ein weiterer Beispieltext für einen Post.</p>
             <div className="post-footer">
-              <button>Like</button>
-              <button>Comment</button>
-              <button>Report</button>
-            </div>
+            <div className="counts">
+                <span>73 Likes</span>
+                <span>14 Kommentare</span>
+              </div>
+          <div>
+            <button>Like</button>
+            <button>Kommentieren</button>
+            <button>Melden</button>
           </div>
+        </div>
+        </div>
           <div className="post">
             <div className="post-header">
               <h2>User Name</h2>
@@ -117,11 +141,18 @@ const Forum = () => {
             </div>
             <p>Dies ist noch ein weiterer Beispieltext für einen Post.</p>
             <div className="post-footer">
-              <button>Like</button>
-              <button>Comment</button>
-              <button>Report</button>
-            </div>
+            <div className="counts">
+                <span>12 Likes</span>
+                <span>6 Kommentare</span>
+              </div>
+          <div>
+            <button>Like</button>
+            <button>Kommentieren</button>
+            <button>Melden</button>
           </div>
+        </div>
+        </div>
+
           <div className="post-head">
             {posts.slice(0, visibleResults).map((post, index) => (
               <div key={index} className="post">
@@ -146,8 +177,23 @@ const Forum = () => {
             )}
           </div>
         </div>
+
+      </div>
+
+      {/* Right Column */}
+      <div className="right-column">
+        <div className="motivational-quote box">
+          <h2>Motivationsspruch</h2>
+          <p>"Glaube an dich selbst und alles ist möglich."</p>
+        </div>
+        <div className="info-box box">
+          <h2>Blog Beiträge</h2>
+          <p>Hier finden Sie wichtige Informationen.</p>
+        </div>
       </div>
     </div>
+
+    
   );
 };
 

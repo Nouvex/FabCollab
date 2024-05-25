@@ -27,9 +27,15 @@ body {
   margin: 0 auto;
 }
 
-.left-column, .right-column {
+.left-column {
   width: 20%;
-  padding: 20px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.right-column {
+  width: 25%;
+  padding: 10px;
   box-sizing: border-box;
 }
 
@@ -132,14 +138,14 @@ body {
   color: #777;
 }
 
-.post-footer {
+.post-footer .counts {
   display: flex;
   margin-top: 10px;
   align-items: left;
 }
 
 .post-footer button {
-  margin-right: 20px;
+  margin-right: 50px;
   color: #28A745;
 }
 
@@ -167,4 +173,9 @@ body {
 
 .topic-list li a:hover, .settings li a:hover {
   text-decoration: underline;
+}
+.counts span {
+  color: #28A745;
+  margin-bottom: 10px;
+  margin-right: 20px;
 }
