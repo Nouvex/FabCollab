@@ -14,25 +14,35 @@ const LandingPage = () => {
   };
 
   const fetchSolutions = (tags) => {
-    const url = tags.length > 0 
-      ? `${backend}/solutionTag/${tags.map(tag => tag.name).join(",")}` 
-      : `${backend}/solution`;
-
-    fetch(url)
-      .then((response) => response.json())
-      .then((solutions) => {
-        setSolutions(solutions);
-      })
-      .catch((error) => {
-        console.error("Fehler beim Abrufen der Solutions:", error);
-      });
+    // Check if any tags are selected
+    if (tags.length > 0) {
+      // Fetch solutions that match any of the selected tags
+      fetch(`${backend}/solutions?tags=${tags.join(',')}`)
+        .then((response) => response.json())
+        .then((solutions) => {
+          setSolutions(solutions);
+        })
+        .catch((error) => {
+          console.error("Fehler beim Abrufen der Solutions:", error);
+        });
+    } else {
+      // Fetch all solutions if no tags are selected
+      fetch(`${backend}/solution`)
+        .then((response) => response.json())
+        .then((solutions) => {
+          setSolutions(solutions);
+        })
+        .catch((error) => {
+          console.error("Fehler beim Abrufen der Solutions:", error);
+        });
+    }
   };
 
   const toggleTag = (tag) => {
-    const isSelected = selectedTags.includes(tag);
+    const isSelected = selectedTags.includes(tag.name);
     const updatedTags = isSelected
-      ? selectedTags.filter((selectedTag) => selectedTag !== tag)
-      : [...selectedTags, tag];
+      ? selectedTags.filter((selectedTag) => selectedTag !== tag.name)
+      : [...selectedTags, tag.name];
     setSelectedTags(updatedTags);
 
     fetchSolutions(updatedTags); // **Update Solutions based on the selected tags**
@@ -54,7 +64,7 @@ const LandingPage = () => {
   const filteredSolutions = solutions.filter((solution) => {
     if (selectedTags.length === 0) return true;
     return selectedTags.every((selectedTag) =>
-      solution.tags.includes(selectedTag.name)
+      solution.tags.includes(selectedTag)
     );
   });
 
@@ -77,7 +87,7 @@ const LandingPage = () => {
           <button
             key={index}
             className={
-              selectedTags.includes(tag) ? "tag-button selected" : "tag-button"
+              selectedTags.includes(tag.name) ? "tag-button selected" : "tag-button"
             }
             onClick={() => toggleTag(tag)}
           >
@@ -88,7 +98,7 @@ const LandingPage = () => {
 
       <div className="content-section">
         <div className="results-section">
-          {filteredSolutions.length > 0 ? ( // **Check if there are any filtered solutions**
+          {filteredSolutions.length > 0 ? (
             filteredSolutions.slice(0, visibleResults).map((solution, index) => (
               <div key={index} className="result-item">
                 <div className="result-image">
@@ -110,7 +120,7 @@ const LandingPage = () => {
               </div>
             ))
           ) : (
-            <p className="no-results-message">Keine Ergebnisse gefunden für die ausgewählten Tags.</p> // **Display message if no results found**
+            <p className="no-results-message">Keine Ergebnisse gefunden für die ausgewählten Tags.</p>
           )}
           {visibleResults < filteredSolutions.length && (
             <button className="show-more-button" onClick={showMoreResults}>
