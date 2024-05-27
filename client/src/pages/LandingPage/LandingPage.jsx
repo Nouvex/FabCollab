@@ -102,6 +102,11 @@ const LandingPage = () => {
                 <p>Description: {solution.short_description}</p>
                 <p>Link: {solution.link}</p>
                 <p>Standort: {solution.standort}</p>
+                {/*<div className="result-tags">
+                  {solution.tags.map((tag, tagIndex) => (
+                    <span key={tagIndex} className="result-tag">{tag}</span>
+                  ))}
+                </div>*/}
               </div>
             </div>
           ))}

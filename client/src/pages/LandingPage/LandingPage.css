@@ -108,6 +108,20 @@ p {
   justify-content: center;
 }
 
+.result-tags {
+  margin-top: 0.5rem;
+}
+
+.result-tag {
+  display: inline-block;
+  background-color: #28A745; /* Primärgrün */
+  color: #FFFFFF; /* Weiß */
+  padding: 0.25rem 0.5rem;
+  margin: 0.25rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+}
+
 .show-more-button {
   display: block;
   width: 100%;
@@ -136,6 +150,11 @@ p {
   color: #FFFFFF; /* Weiß */
 }
 
+.info-section h3,
+.info-section p {
+  color: #FFFFFF; /* Weiß */
+}
+
 /* Fixiert den Footer unten */
 .footer {
   background-color: #28A745; /* Primärgrün */
@@ -147,6 +166,12 @@ p {
   width: 100%;
   border-top: 1px solid #218838; /* Dunkelgrün */
 }
+
+.footer p {
+  color: #FFFFFF; /* Weiß */
+  margin: 0; /* Entfernt jegliche Standard-Margen, um sicherzustellen, dass der Text korrekt angezeigt wird */
+}
+
 .tag-button.selected {
   background-color: #7c807d; /* Dunkelgrün */
   color: #FFFFFF; /* Weiß */
