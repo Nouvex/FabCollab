@@ -13,6 +13,12 @@
   align-items: center;
 }
 
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* Unterstreichung entfernen */
+}
+
 .logo-image {
   height: 40px; /* Größe des Logos anpassen */
   margin-left: 0.5rem;
