@@ -96,8 +96,8 @@ p {
 }
 
 .result-image img {
-  width: 80px;
-  height: 80px;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
   margin-right: 1rem;
 }
@@ -105,7 +105,14 @@ p {
 .result-content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  text-align: left; /* Ensures all text within result-content is left-aligned */
+}
+
+.result-content h3, 
+.result-content p {
+  margin: 0.5rem 0; /* Provides consistent spacing between elements */
+  text-align: left; /* Ensures each element is left-aligned */
 }
 
 .result-tags {
@@ -114,8 +121,8 @@ p {
 
 .result-tag {
   display: inline-block;
-  background-color: #28A745; /* Primärgrün */
-  color: #FFFFFF; /* Weiß */
+  background-color: #28A745; /* Primary green */
+  color: #FFFFFF; /* White */
   padding: 0.25rem 0.5rem;
   margin: 0.25rem;
   border-radius: 4px;

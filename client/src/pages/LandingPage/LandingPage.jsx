@@ -92,21 +92,21 @@ const LandingPage = () => {
 
       <div className="content-section">
         <div className="results-section">
-          {solutions.slice(0, visibleResults).map((solution, index) => (
+          {filteredSolutions.slice(0, visibleResults).map((solution, index) => (
             <div key={index} className="result-item">
               <div className="result-image">
-                <img src="https://via.placeholder.com/80" alt="Beispiel" />
+                <img src="https://via.placeholder.com/150" alt="Beispiel" />
               </div>
               <div className="result-content">
                 <h3>{solution.name}</h3>
-                <p>Description: {solution.short_description}</p>
-                <p>Link: {solution.link}</p>
+                <p>Beschreibung: {solution.short_description}</p>
+                <p>Link: <a href={solution.link}>{solution.link}</a></p>
                 <p>Standort: {solution.standort}</p>
-                {/*<div className="result-tags">
+                <div className="result-tags">
                   {solution.tags.map((tag, tagIndex) => (
                     <span key={tagIndex} className="result-tag">{tag}</span>
                   ))}
-                </div>*/}
+                </div>
               </div>
             </div>
           ))}
