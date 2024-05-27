@@ -146,6 +146,12 @@ p {
   background-color: #218838; /* Dunkelgrün */
 }
 
+.no-results-message {
+  text-align: center;
+  color: #6C757D; /* Grau */
+  margin-top: 1rem;
+}
+
 .info-section {
   flex: 1;
   max-width: 400px;
