@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom"; // Importiere useNavigate
 import "./LandingPage.css";
 
 const backend = "http://localhost:3000";
@@ -8,15 +9,14 @@ const LandingPage = () => {
   const [tags, setTags] = useState([]);
   const [solutions, setSolutions] = useState([]);
   const [selectedTags, setSelectedTags] = useState([]);
+  const navigate = useNavigate(); // Initialisiere useNavigate
 
   const showMoreResults = () => {
     setVisibleResults((prev) => prev + 3);
   };
 
   const fetchSolutions = (tags) => {
-    // Check if any tags are selected
     if (tags.length > 0) {
-      // Fetch solutions that match any of the selected tags
       fetch(`${backend}/solutions?tags=${tags.join(',')}`)
         .then((response) => response.json())
         .then((solutions) => {
@@ -26,7 +26,6 @@ const LandingPage = () => {
           console.error("Fehler beim Abrufen der Solutions:", error);
         });
     } else {
-      // Fetch all solutions if no tags are selected
       fetch(`${backend}/solution`)
         .then((response) => response.json())
         .then((solutions) => {
@@ -45,7 +44,7 @@ const LandingPage = () => {
       : [...selectedTags, tag.name];
     setSelectedTags(updatedTags);
 
-    fetchSolutions(updatedTags); // **Update Solutions based on the selected tags**
+    fetchSolutions(updatedTags);
   };
 
   useEffect(() => {
@@ -58,8 +57,12 @@ const LandingPage = () => {
         console.error("Fehler beim Abrufen der Tags:", error);
       });
 
-    fetchSolutions([]); // **Initial fetch for all solutions**
+    fetchSolutions([]);
   }, []);
+
+  const handleResultClick = (solution) => {
+    navigate('/sub', { state: { solution } }); // Navigiere zur SubPage und übergebe die Daten
+  };
 
   const filteredSolutions = solutions.filter((solution) => {
     if (selectedTags.length === 0) return true;
@@ -100,7 +103,11 @@ const LandingPage = () => {
         <div className="results-section">
           {filteredSolutions.length > 0 ? (
             filteredSolutions.slice(0, visibleResults).map((solution, index) => (
-              <div key={index} className="result-item">
+              <div
+                key={index}
+                className="result-item"
+                onClick={() => handleResultClick(solution)} // Füge einen onClick-Handler hinzu
+              >
                 <div className="result-image">
                   <img src="https://via.placeholder.com/150" alt="Beispiel" />
                 </div>
@@ -135,6 +142,22 @@ const LandingPage = () => {
           <p>Email: info@fabcollab.com</p>
           <p>Adresse: Beispielstraße 1, 12345 Musterstadt</p>
         </div>
+      </div>
+
+      <div className="top-comments-section">
+        <h2>Top Beiträge aus dem Forum</h2>
+        <div className="comments">
+          <div className="comment">
+            <p>"Dieser Therapeut hat mir sehr geholfen. Sehr empfehlenswert!" - User A</p>
+          </div>
+          <div className="comment">
+            <p>"Tolle Praxis, freundliches Personal und kompetente Beratung." - User B</p>
+          </div>
+          <div className="comment">
+            <p>"Sehr zufrieden mit der Behandlung, fühle mich hier gut aufgehoben." - User C</p>
+          </div>
+        </div>
+        <button className="tag-button">Zum Forum</button>
       </div>
     </div>
   );

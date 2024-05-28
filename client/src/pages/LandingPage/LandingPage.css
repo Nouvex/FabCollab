@@ -66,6 +66,11 @@ p {
   background-color: #218838; /* Dunkelgrün */
 }
 
+.tag-button.selected {
+  background-color: #7c807d; /* Dunkelgrün */
+  color: #FFFFFF; /* Weiß */
+}
+
 .content-section {
   display: flex;
   justify-content: space-between;
@@ -93,6 +98,12 @@ p {
   margin: 0.5rem 0;
   border-radius: 4px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+  cursor: pointer; /* Zeigt an, dass die gesamte Karte klickbar ist */
+}
+
+.result-item:hover {
+  transform: none; /* Entfernt den Hover-Effekt */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
 }
 
 .result-image img {
@@ -106,13 +117,13 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  text-align: left; /* Ensures all text within result-content is left-aligned */
+  text-align: left; /* Sichert, dass der gesamte Text innerhalb result-content linksbündig ist */
 }
 
 .result-content h3, 
 .result-content p {
-  margin: 0.5rem 0; /* Provides consistent spacing between elements */
-  text-align: left; /* Ensures each element is left-aligned */
+  margin: 0.5rem 0; /* Sorgt für gleichmäßigen Abstand zwischen den Elementen */
+  text-align: left; /* Sichert, dass jedes Element linksbündig ist */
 }
 
 .result-tags {
@@ -121,8 +132,8 @@ p {
 
 .result-tag {
   display: inline-block;
-  background-color: #28A745; /* Primary green */
-  color: #FFFFFF; /* White */
+  background-color: #28A745; /* Primärgrün */
+  color: #FFFFFF; /* Weiß */
   padding: 0.25rem 0.5rem;
   margin: 0.25rem;
   border-radius: 4px;
@@ -168,7 +179,36 @@ p {
   color: #FFFFFF; /* Weiß */
 }
 
-/* Fixiert den Footer unten */
+/* Sektion für Top-Kommentare aus dem Forum */
+.top-comments-section {
+  margin-top: 2rem;
+  background-color: #FFFFFF; /* Weiß, passend zu den Ergebnissen */
+  border: 1px solid #DCDCDC; /* Hellgrau, passend zu den Ergebnissen */
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+  transition: none;
+}
+
+.top-comments-section h2 {
+  color: #28A745; /* Primärgrün */
+  text-align: center;
+}
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.comment {
+  background-color: #FFFFFF; /* Weiß */
+  border: 1px solid #DCDCDC; /* Hellgrau */
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+}
+
 .footer {
   background-color: #28A745; /* Primärgrün */
   color: #FFFFFF; /* Weiß */
@@ -183,9 +223,4 @@ p {
 .footer p {
   color: #FFFFFF; /* Weiß */
   margin: 0; /* Entfernt jegliche Standard-Margen, um sicherzustellen, dass der Text korrekt angezeigt wird */
-}
-
-.tag-button.selected {
-  background-color: #7c807d; /* Dunkelgrün */
-  color: #FFFFFF; /* Weiß */
 }
