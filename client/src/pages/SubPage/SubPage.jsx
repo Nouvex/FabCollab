@@ -27,11 +27,23 @@ const SubPage = () => {
                 <p><strong>Standort:</strong> {solution.standort}</p>
                 <p><strong>Link:</strong> <a href={solution.link} target="_blank" rel="noopener noreferrer">{solution.link}</a></p>
               </div>
+
+              <div class="rating-system">
+                <h2>Bewertung</h2>
+            <button id="thumbsUpButton">👍</button>
+            <span id="thumbsUpCount">164</span>
+            <button id="thumbsDownButton">👎</button>
+            <span id="thumbsDownCount">12</span>
+        </div>
+
             </div>
             <div className="description">
               <h2>Intro</h2>
               <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
             </div>
+
+  
+
             <div className="pros-and-cons">
               <div className="pros">
                 <h3>Pros</h3>
