@@ -26,7 +26,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/forum" element={<Forum />} />
-          <Route path="/sub" element={<SubPage />} />
+          <Route path="/sub" element={<SubPage isLoggedIn={isLoggedIn}/>} />
         </Routes>
       </Layout>
     </Router>

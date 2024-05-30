@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom'; // Importiere useLocation
+import { useLocation } from 'react-router-dom';
 import './SubPage.css';
 import therapeut from '../../assets/therapeut.jpg';
 import aok from '../../assets/aok.jpg';
@@ -8,9 +8,9 @@ import dak from '../../assets/dak.svg';
 import mobil from '../../assets/mobil.png';
 import tk from '../../assets/tk.png';
 
-const SubPage = () => {
-  const location = useLocation(); // Verwende useLocation, um die übergebenen Daten zu empfangen
-  const { solution } = location.state || {}; // Extrahiere die übergebenen Daten
+const SubPage = ({ isLoggedIn }) => {
+  const location = useLocation();
+  const { solution } = location.state || {};
 
   return (
     <div className="forum">
@@ -27,23 +27,20 @@ const SubPage = () => {
                 <p><strong>Standort:</strong> {solution.standort}</p>
                 <p><strong>Link:</strong> <a href={solution.link} target="_blank" rel="noopener noreferrer">{solution.link}</a></p>
               </div>
-
-              <div class="rating-system">
-                <h2>Bewertung</h2>
-            <button id="thumbsUpButton">👍</button>
-            <span id="thumbsUpCount">164</span>
-            <button id="thumbsDownButton">👎</button>
-            <span id="thumbsDownCount">12</span>
-        </div>
-
+              {isLoggedIn && (
+                <div className="rating-system">
+                  <h2>Bewertung</h2>
+                  <button id="thumbsUpButton" className="thumbs-up">👍</button>
+                  <span id="thumbsUpCount">164</span>
+                  <button id="thumbsDownButton" className="thumbs-down">👎</button>
+                  <span id="thumbsDownCount">12</span>
+                </div>
+              )}
             </div>
             <div className="description">
               <h2>Intro</h2>
               <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
             </div>
-
-  
-
             <div className="pros-and-cons">
               <div className="pros">
                 <h3>Pros</h3>
