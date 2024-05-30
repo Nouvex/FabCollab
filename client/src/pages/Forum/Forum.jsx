@@ -24,28 +24,28 @@ const Forum = () => {
       {/* Left Column */}
       <div className="left-column">
         <div className="box">
-          <h2>Current Topics</h2>
+          <h2>Nach Themen</h2>
           <ul className="topic-list">
             <li>
-              <a href="#topic1">Anxiety</a>
+              <a href="#topic1">Angst</a>
             </li>
             <li>
               <a href="#topic2">Depression</a>
             </li>
             <li>
-              <a href="#topic3">Psychosis</a>
+              <a href="#topic3">Drogenmissbrauch</a>
             </li>
             <li>
-              <a href="#topic4">Suizid</a>
+              <a href="#topic4">Schlafstörung</a>
             </li>
           </ul>
-          <h2>Settings</h2>
+          <h2>Einstellungen</h2>
           <ul className="settings">
             <li>
-              <a href="#settings">Settings</a>
+              <a href="#settings">Einstellungen</a>
             </li>
             <li>
-              <a href="#impressum">Imprint</a>
+              <a href="#impressum">Impressum</a>
             </li>
           </ul>
         </div>
@@ -64,7 +64,7 @@ const Forum = () => {
 
         <div className="posts"> <div className="post">
           <div className="post-header">
-            <h2>Pelican-245</h2>
+            <h2>Pelikan-245</h2>
             <small>vor 1 Stunde</small>
           </div>
           <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
@@ -82,7 +82,7 @@ const Forum = () => {
         </div>
           <div className="post">
             <div className="post-header">
-              <h2>Lion-987</h2>
+              <h2>Löwe-987</h2>
               <small>vor 2 Stunden</small>
             </div>
             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
@@ -100,7 +100,7 @@ const Forum = () => {
         </div>
           <div className="post">
             <div className="post-header">
-              <h2>Turtle-874</h2>
+              <h2>Schildkröte-874</h2>
               <small>vor 3 Stunden</small>
             </div>
             <p>Dies ist noch ein weiterer Beispieltext für einen Post.</p>
