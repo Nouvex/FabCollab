@@ -4,7 +4,7 @@ import "./LandingPage.css";
 
 const backend = "http://localhost:3000";
 
-const LandingPage = () => {
+const LandingPage = ({ isLoggedIn }) => {
   const [visibleResults, setVisibleResults] = useState(3);
   const [tags, setTags] = useState([]);
   const [solutions, setSolutions] = useState([]);
@@ -64,6 +64,14 @@ const LandingPage = () => {
     navigate('/sub', { state: { solution } }); // Navigiere zur SubPage und übergebe die Daten
   };
 
+  const handleOfferClick = () => {
+    navigate('/submit-offer'); // Navigiere zur SubmitOfferPage
+  };
+
+  const handleForumClick = () => {
+    navigate('/forum'); // Navigiere zur ForumPage
+  };
+
   const filteredSolutions = solutions.filter((solution) => {
     if (selectedTags.length === 0) return true;
     return selectedTags.every((selectedTag) =>
@@ -85,6 +93,7 @@ const LandingPage = () => {
         <button className="search-button">Suche</button>
       </div>
 
+      
       <div className="tags-section">
         {tags.map((tag, index) => (
           <button
@@ -100,7 +109,14 @@ const LandingPage = () => {
       </div>
 
       <div className="content-section">
+      
+
         <div className="results-section">
+        {isLoggedIn && (
+        <div className="offer-submit-section">
+          <button className="submit-offer-button" onClick={handleOfferClick}>Angebot einreichen</button>
+        </div>
+      )}
           {filteredSolutions.length > 0 ? (
             filteredSolutions.slice(0, visibleResults).map((solution, index) => (
               <div
@@ -157,7 +173,7 @@ const LandingPage = () => {
             <p>"Sehr zufrieden mit der Behandlung, fühle mich hier gut aufgehoben." - User C</p>
           </div>
         </div>
-        <button className="tag-button">Zum Forum</button>
+        <button className="tag-button" onClick={handleForumClick}>Zum Forum</button>
       </div>
     </div>
   );
