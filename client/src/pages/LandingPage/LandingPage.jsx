@@ -93,7 +93,7 @@ const LandingPage = ({ isLoggedIn }) => {
         <button className="search-button">Suche</button>
       </div>
 
-      
+
       <div className="tags-section">
         {tags.map((tag, index) => (
           <button
@@ -109,14 +109,14 @@ const LandingPage = ({ isLoggedIn }) => {
       </div>
 
       <div className="content-section">
-      
+
 
         <div className="results-section">
-        {isLoggedIn && (
-        <div className="offer-submit-section">
-          <button className="submit-offer-button" onClick={handleOfferClick}>Angebot einreichen</button>
-        </div>
-      )}
+          {isLoggedIn && (
+            <div className="offer-submit-section">
+              <button className="submit-offer-button" onClick={handleOfferClick}>Angebot einreichen</button>
+            </div>
+          )}
           {filteredSolutions.length > 0 ? (
             filteredSolutions.slice(0, visibleResults).map((solution, index) => (
               <div
@@ -125,7 +125,14 @@ const LandingPage = ({ isLoggedIn }) => {
                 onClick={() => handleResultClick(solution)} // Füge einen onClick-Handler hinzu
               >
                 <div className="result-image">
-                  <img src="https://via.placeholder.com/150" alt="Beispiel" />
+                  {solution.visual ? (
+                     <img src={`${backend}/${solution.visual}`} alt={solution.name} />
+                  ) : (
+                    <img
+                      src="https://via.placeholder.com/150"
+                      alt="Beispiel"
+                    />
+                  )}
                 </div>
                 <div className="result-content">
                   <h3>{solution.name}</h3>
