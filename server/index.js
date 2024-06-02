@@ -17,14 +17,12 @@ const userRoutes = require('./routes/userRoutes');
 const tagRoutes = require('./routes/tagRoutes');
 const solutionRoutes = require('./routes/solutionRoutes');
 const postRoutes = require('./routes/postRoutes');
-const solutionTagRoutes = require('./routes/solutionTagRoutes');
 
 // Verwende die Routen in der Hauptdatei
 app.use('/user', userRoutes);
 app.use('/tag', tagRoutes);
 app.use('/solution', solutionRoutes);
 app.use('/post', postRoutes);
-app.use('/solutionTag', solutionTagRoutes);
 
 
 

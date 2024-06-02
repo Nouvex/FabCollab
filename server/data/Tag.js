@@ -1,6 +1,5 @@
 const { Sequelize, DataTypes, Model } = require('sequelize');
 const Solutions = require('./Solutions.js')
-const SolutionTag = require('./SolutionTag.js');
 const sequelize = require('../database.js');
 
 
@@ -50,8 +49,6 @@ async function findAll() {
 
 async function findOne(tagName) {
     try {
-        
-
         const tag = await Tag.findOne({
             where: {
                 name: tagName

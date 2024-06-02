@@ -47,13 +47,13 @@ const SubPage = ({ isLoggedIn }) => {
                 <ul>
                   <li><span className="icon">&#x2714;</span> Freundliches Personal</li>
                   <li><span className="icon">&#x2714;</span> Kurze Wartezeiten</li>
-                  <li><span className="icon">&#x2714;</span> Zentrale Lage</li>
+                  <li><span className="icon">&#x2714;</span> Kulturelle Offenheit</li>
                 </ul>
               </div>
               <div className="cons">
                 <h3>Contras</h3>
                 <ul>
-                  <li><span className="icon">&#x2716;</span> Schlechte Parkmöglichkeiten</li>
+                  <li><span className="icon">&#x2716;</span> Kosten</li>
                   <li><span className="icon">&#x2716;</span> Hohe Nachfrage</li>
                 </ul>
               </div>

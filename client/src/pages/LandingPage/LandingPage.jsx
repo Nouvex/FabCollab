@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom"; // Importiere useNavigate
+import { useNavigate } from "react-router-dom";
 import "./LandingPage.css";
+import Beispiel from "../../assets/BVC_image.png";
 
 const backend = "http://localhost:3000";
 
@@ -8,76 +9,63 @@ const LandingPage = ({ isLoggedIn }) => {
   const [visibleResults, setVisibleResults] = useState(3);
   const [tags, setTags] = useState([]);
   const [solutions, setSolutions] = useState([]);
+  const [displayedSolutions, setDisplayedSolutions] = useState([]);
   const [selectedTags, setSelectedTags] = useState([]);
-  const navigate = useNavigate(); // Initialisiere useNavigate
+  const [locations, setLocations] = useState([]);
+  const [selectedLocation, setSelectedLocation] = useState('');
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    fetchTagsAndSolutions();
+  }, []);
+
+  const fetchTagsAndSolutions = () => {
+    fetch(`${backend}/tag`)
+      .then(response => response.json())
+      .then(setTags)
+      .catch(error => console.error("Fehler beim Abrufen der Tags:", error));
+
+    fetch(`${backend}/solution`)
+      .then(response => response.json())
+      .then(data => {
+        setSolutions(data);
+        setDisplayedSolutions(data);
+        updateLocations(data);
+      })
+      .catch(error => console.error("Fehler beim Abrufen der Solutions:", error));
+  };
+
+  const updateLocations = (solutions) => {
+    const newLocations = Array.from(new Set(solutions.map(s => s.standort)));
+    setLocations(newLocations);
+  };
+
+  const filterSolutions = (solutions, tags, location) => {
+    return solutions.filter(solution =>
+      (tags.length === 0 || tags.every(tag => solution.tags.includes(tag))) &&
+      (location === '' || solution.standort === location)
+    );
+  };
+
+  const handleTagToggle = (tag) => {
+    const updatedTags = selectedTags.includes(tag)
+      ? selectedTags.filter(t => t !== tag)
+      : [...selectedTags, tag];
+    setSelectedTags(updatedTags);
+    const filteredSolutions = filterSolutions(solutions, updatedTags, selectedLocation);
+    setDisplayedSolutions(filteredSolutions);
+  };
+
+  const handleLocationChange = (e) => {
+    const newLocation = e.target.value;
+    setSelectedLocation(newLocation);
+    const filteredSolutions = filterSolutions(solutions, selectedTags, newLocation);
+    setDisplayedSolutions(filteredSolutions);
+  };
 
   const showMoreResults = () => {
     setVisibleResults((prev) => prev + 3);
   };
-
-  const fetchSolutions = (tags) => {
-    if (tags.length > 0) {
-      fetch(`${backend}/solutions?tags=${tags.join(',')}`)
-        .then((response) => response.json())
-        .then((solutions) => {
-          setSolutions(solutions);
-        })
-        .catch((error) => {
-          console.error("Fehler beim Abrufen der Solutions:", error);
-        });
-    } else {
-      fetch(`${backend}/solution`)
-        .then((response) => response.json())
-        .then((solutions) => {
-          setSolutions(solutions);
-        })
-        .catch((error) => {
-          console.error("Fehler beim Abrufen der Solutions:", error);
-        });
-    }
-  };
-
-  const toggleTag = (tag) => {
-    const isSelected = selectedTags.includes(tag.name);
-    const updatedTags = isSelected
-      ? selectedTags.filter((selectedTag) => selectedTag !== tag.name)
-      : [...selectedTags, tag.name];
-    setSelectedTags(updatedTags);
-
-    fetchSolutions(updatedTags);
-  };
-
-  useEffect(() => {
-    fetch(`${backend}/tag`)
-      .then((response) => response.json())
-      .then((tags) => {
-        setTags(tags);
-      })
-      .catch((error) => {
-        console.error("Fehler beim Abrufen der Tags:", error);
-      });
-
-    fetchSolutions([]);
-  }, []);
-
-  const handleResultClick = (solution) => {
-    navigate('/sub', { state: { solution } }); // Navigiere zur SubPage und übergebe die Daten
-  };
-
-  const handleOfferClick = () => {
-    navigate('/submit-offer'); // Navigiere zur SubmitOfferPage
-  };
-
-  const handleForumClick = () => {
-    navigate('/forum'); // Navigiere zur ForumPage
-  };
-
-  const filteredSolutions = solutions.filter((solution) => {
-    if (selectedTags.length === 0) return true;
-    return selectedTags.every((selectedTag) =>
-      solution.tags.includes(selectedTag)
-    );
-  });
 
   return (
     <div className="landing-page">
@@ -92,47 +80,50 @@ const LandingPage = ({ isLoggedIn }) => {
         <input type="text" placeholder="Suche..." className="search-input" />
         <button className="search-button">Suche</button>
       </div>
+      <div className="filter-section">
+        <div className="tags-section">
+          {tags.map((tag, index) => (
+            <button
+              key={index}
+              className={
+                selectedTags.includes(tag.name) ? "tag-button selected" : "tag-button"
+              }
+              onClick={() => handleTagToggle(tag.name)}
+            >
+              {tag.name}
+            </button>
+          ))}
+        </div>
 
-
-      <div className="tags-section">
-        {tags.map((tag, index) => (
-          <button
-            key={index}
-            className={
-              selectedTags.includes(tag.name) ? "tag-button selected" : "tag-button"
-            }
-            onClick={() => toggleTag(tag)}
+        <div className="location-section">
+          <select
+            onChange={handleLocationChange}
+            value={selectedLocation}
           >
-            {tag.name}
-          </button>
-        ))}
+            <option value="">Alle Standorte</option>
+            {locations.map((location, index) => (
+              <option key={index} value={location}>{location}</option>
+            ))}
+          </select>
+        </div>
       </div>
 
       <div className="content-section">
-
-
         <div className="results-section">
           {isLoggedIn && (
             <div className="offer-submit-section">
-              <button className="submit-offer-button" onClick={handleOfferClick}>Angebot einreichen</button>
+              <button className="submit-offer-button" onClick={() => navigate('/submit-offer')}>Angebot einreichen</button>
             </div>
           )}
-          {filteredSolutions.length > 0 ? (
-            filteredSolutions.slice(0, visibleResults).map((solution, index) => (
+          {displayedSolutions.length > 0 ? (
+            displayedSolutions.slice(0, visibleResults).map((solution, index) => (
               <div
                 key={index}
                 className="result-item"
-                onClick={() => handleResultClick(solution)}
+                onClick={() => navigate('/sub', { state: { solution } })}
               >
                 <div className="result-image">
-                  {solution.visual ? (
-                     <img src={`${backend}/${solution.visual}`} alt={solution.name} />
-                  ) : (
-                    <img
-                      src="https://via.placeholder.com/150"
-                      alt="Beispiel"
-                    />
-                  )}
+                  <img src={Beispiel}/>
                 </div>
                 <div className="result-content">
                   <h3>{solution.name}</h3>
@@ -152,7 +143,7 @@ const LandingPage = ({ isLoggedIn }) => {
           ) : (
             <p className="no-results-message">Keine Ergebnisse gefunden für die ausgewählten Tags.</p>
           )}
-          {visibleResults < filteredSolutions.length && (
+          {visibleResults < displayedSolutions.length && (
             <button className="show-more-button" onClick={showMoreResults}>
               Mehr anzeigen
             </button>
@@ -188,7 +179,7 @@ const LandingPage = ({ isLoggedIn }) => {
             <p>"Sehr zufrieden mit der Behandlung, fühle mich hier gut aufgehoben." - User C</p>
           </div>
         </div>
-        <button className="tag-button" onClick={handleForumClick}>Zum Forum</button>
+        <button className="tag-button" onClick={() => navigate('/forum')}>Zum Forum</button>
       </div>
     </div>
   );
