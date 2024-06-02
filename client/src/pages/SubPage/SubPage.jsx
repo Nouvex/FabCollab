@@ -88,13 +88,13 @@ const SubPage = ({ isLoggedIn }) => {
               <h2>Top Beiträge aus dem Forum</h2>
               <div className="comments">
                 <div className="comment">
-                  <p>"Ich war aufgrund von anhaltendem Stress und Erschöpfung in der Beratungsstelle und kann nur Positives berichten. Die Therapeuten sind unglaublich einfühlsam und professionell. Schon nach wenigen Sitzungen habe ich gelernt, besser mit meinem Stress umzugehen und meine Work-Life-Balance zu verbessern. Diese Beratungsstelle hat mir wirklich geholfen, wieder zu mir selbst zu finden. Vielen Dank" - User A</p>
+                  <p>"Ich war aufgrund von anhaltendem Stress und Erschöpfung in der Beratungsstelle und kann nur Positives berichten. Die Therapeuten sind unglaublich einfühlsam und professionell. Schon nach wenigen Sitzungen habe ich gelernt, besser mit meinem Stress umzugehen und meine Work-Life-Balance zu verbessern. Diese Beratungsstelle hat mir wirklich geholfen, wieder zu mir selbst zu finden. Vielen Dank" - <strong>User A</strong></p>
                 </div>
                 <div className="comment">
-                  <p>"Nachdem meine Ehe in eine tiefe Krise geraten war, haben mein Partner und ich uns für eine Paartherapie bei dieser Beratungsstelle entschieden. Wir fühlten uns von Anfang an gut aufgehoben. Die Gespräche waren intensiv, aber stets respektvoll und konstruktiv. Dank der wertvollen Unterstützung haben wir gelernt, besser zu kommunizieren und unsere Beziehung wieder zu stärken. Ich kann diese Beratungsstelle nur weiterempfehlen." - User B</p>
+                  <p>"Nachdem meine Ehe in eine tiefe Krise geraten war, haben mein Partner und ich uns für eine Paartherapie bei dieser Beratungsstelle entschieden. Wir fühlten uns von Anfang an gut aufgehoben. Die Gespräche waren intensiv, aber stets respektvoll und konstruktiv. Dank der wertvollen Unterstützung haben wir gelernt, besser zu kommunizieren und unsere Beziehung wieder zu stärken. Ich kann diese Beratungsstelle nur weiterempfehlen." - <strong>User B</strong></p>
                 </div>
                 <div className="comment">
-                  <p>"Unser Sohn hatte große Schwierigkeiten in der Schule und war sehr zurückgezogen. Die Kinder- und Jugendberatung in dieser Beratungsstelle war ein echter Segen für unsere Familie. Die Therapeuten haben nicht nur unserem Sohn geholfen, sein Selbstvertrauen zurückzugewinnen, sondern uns auch als Eltern wertvolle Tipps gegeben, wie wir ihn besser unterstützen können. Wir sind sehr dankbar für die professionelle und herzliche Betreuung." - User C</p>
+                  <p>"Unser Sohn hatte große Schwierigkeiten in der Schule und war sehr zurückgezogen. Die Kinder- und Jugendberatung in dieser Beratungsstelle war ein echter Segen für unsere Familie. Die Therapeuten haben nicht nur unserem Sohn geholfen, sein Selbstvertrauen zurückzugewinnen, sondern uns auch als Eltern wertvolle Tipps gegeben, wie wir ihn besser unterstützen können. Wir sind sehr dankbar für die professionelle und herzliche Betreuung." - <strong>User C</strong></p>
                 </div>
               </div>
               <button className="tag-button">Zum Forum</button>
