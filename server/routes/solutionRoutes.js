@@ -1,55 +1,67 @@
 const express = require('express');
 const router = express.Router();
-const Solution = require('../data/Solutions');
+const multer = require('multer');
+const Solutions = require('../data/Solutions');
 
+// Configure multer for file uploads
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, 'uploads/');
+    },
+    filename: (req, file, cb) => {
+        cb(null, Date.now() + '-' + file.originalname);
+    }
+});
+const upload = multer({ storage });
 
-// GET all solutions
 router.get('/', async (req, res) => {
-  const solutions = await Solution.findAll();
-  res.json(solutions);
+    const solutions = await Solutions.findAll();
+    res.json(solutions);
 });
 
-// GET a single solution by ID
 router.get('/:id', async (req, res) => {
-  const solution = await Solution.findByPk(req.params.id);
-  if (solution) {
-    res.json(solution);
-  } else {
-    res.status(404).send('Solution not found');
-  }
+    const solution = await Solutions.findByPk(req.params.id);
+    if (solution) {
+        res.json(solution);
+    } else {
+        res.status(404).send('Solution not found');
+    }
 });
 
-// POST a new solution
-router.post('/', async (req, res) => {
-  const newSolution = await Solution.create(req.body);
-  res.json(newSolution);
+router.post('/', upload.single('image'), async (req, res) => {
+    try {
+        const { name, description, short_description, link, standort, tags } = req.body;
+        const visual = req.file ? req.file.filename : ''; // Use filename if file exists, else empty string
+
+        const newSolution = await Solutions.create({
+            name,
+            description, 
+            short_description,
+            link,
+            standort,
+            tags: tags.split(',').map(tag => tag.trim()), // Convert tags to array
+            visual
+        });
+
+        res.json(newSolution);
+    } catch (error) {
+        console.error('Error adding solution:', error);
+        res.status(500).send('Internal server error');
+    }
 });
 
-// PUT update a solution
 router.put('/:id', async (req, res) => {
-  const updatedSolution = await Solution.update(req.body, {
-    where: { id: req.params.id }
-  });
-  res.json(updatedSolution);
+    const updatedSolution = await Solutions.update(req.body, {
+        where: { id: req.params.id }
+    });
+    res.json(updatedSolution);
 });
 
-// DELETE a solution
 router.delete('/:id', async (req, res) => {
-  await Solution.destroy({
-    where: { id: req.params.id }
-  });
-  res.send('Solution deleted');
-});
-
-
-router.get('/test/:tagName', async (req, res) => {
-  const tagName = req.params.tagName;
-  try {
-      const solutions = await Solutions.getSolutionsForTag(tagName);
-      res.json(solutions);
-  } catch (error) {
-      res.status(500).json({ error: 'Internal server error' });
-  }
+    await Solutions.destroy({
+        where: { id: req.params.id }
+    });
+    res.send('Solution deleted');
 });
 
 module.exports = router;

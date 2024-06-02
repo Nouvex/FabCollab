@@ -71,6 +71,27 @@ p {
   color: #FFFFFF; /* Weiß */
 }
 
+.offer-submit-section {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.submit-offer-button {
+  background-color: #28A745; /* Primärgrün */
+  color: #FFFFFF; /* Weiß */
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0.25rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-offer-button:hover {
+  background-color: #218838; /* Dunkelgrün */
+}
+
 .content-section {
   display: flex;
   justify-content: space-between;

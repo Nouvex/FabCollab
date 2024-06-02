@@ -23,7 +23,7 @@ const SubPage = ({ isLoggedIn }) => {
               </div>
               <div className="info">
                 <h2>{solution.name}</h2>
-                <p><strong>Beschreibung:</strong> {solution.short_description}</p>
+                <p><strong>Beschreibung:</strong> {solution.description}</p>
                 <p><strong>Standort:</strong> {solution.standort}</p>
                 <p><strong>Link:</strong> <a href={solution.link} target="_blank" rel="noopener noreferrer">{solution.link}</a></p>
               </div>

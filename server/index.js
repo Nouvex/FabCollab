@@ -8,6 +8,10 @@ app.use(cors({
   credentials: true // Wenn Cookies in CORS-Anfragen erlaubt sein sollen
 }));
 
+
+app.use(express.json()); // To parse JSON bodies
+app.use(express.urlencoded({ extended: true })); // To parse URL-encoded bodies
+
 // Einbinden der Routen aus verschiedenen Dateien
 const userRoutes = require('./routes/userRoutes');
 const tagRoutes = require('./routes/tagRoutes');
