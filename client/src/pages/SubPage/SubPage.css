@@ -183,3 +183,16 @@
 .rating-system #thumbsDownButton {
   color: #FF0000; /* Rot */
 }
+
+.description br {
+  text-align: left;
+}
+
+.description strong {
+  text-align: left;
+}
+
+.spezialisierung {
+  text-align: left;
+  margin-left: 500px;
+}

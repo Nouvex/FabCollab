@@ -67,7 +67,7 @@ const Forum = () => {
             <h2>Pelikan-245</h2>
             <small>vor 1 Stunde</small>
           </div>
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+          <p>Ich habe vor einigen Jahren begonnen, unter Angststörungen zu leiden. Es fing mit gelegentlichen Panikattacken an und entwickelte sich schnell zu einer allgegenwärtigen Angst, die mein Leben stark einschränkte. Es war, als würde ich ständig in Erwartung des Schlimmsten leben. Einfache Dinge wie Einkaufen oder Treffen mit Freunden wurden zu unüberwindbaren Herausforderungen. Es hat lange gedauert, bis ich mir Hilfe gesucht habe, aber der Weg zur Therapie war der erste Schritt zurück in ein normales Leben. Heute bin ich dankbar, dass ich gelernt habe, mit meiner Angst umzugehen und sie nicht mehr mein Leben bestimmen zu lassen</p>
           <div className="post-footer">
               <div className="counts">
                 <span>234 Likes</span>
@@ -85,7 +85,7 @@ const Forum = () => {
               <h2>Löwe-987</h2>
               <small>vor 2 Stunden</small>
             </div>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            <p>Seit meiner Jugend kämpfe ich mit Depressionen. Es ist schwer, den Leuten zu erklären, wie es sich anfühlt, wenn man morgens nicht aus dem Bett kommen kann und die Welt nur noch grau erscheint. Die Erschöpfung, die Hoffnungslosigkeit und die ständige Selbstkritik machen jeden Tag zu einem Kampf. Es war ein langer Weg, aber mit der richtigen Therapie und Unterstützung habe ich gelernt, kleine Schritte zu machen und mir selbst gegenüber geduldiger zu sein. Es ist immer noch schwer, aber ich habe Hoffnung, dass es besser wird.</p>
             <div className="post-footer">
             <div className="counts">
                 <span>198 Likes</span>
@@ -103,7 +103,7 @@ const Forum = () => {
               <h2>Schildkröte-874</h2>
               <small>vor 3 Stunden</small>
             </div>
-            <p>Dies ist noch ein weiterer Beispieltext für einen Post.</p>
+            <p>Ich habe eine posttraumatische Belastungsstörung (PTBS) nach einem schweren Unfall entwickelt. Die Flashbacks und Albträume haben mein Leben zur Hölle gemacht. Es war, als würde ich das Trauma immer wieder durchleben. Die Therapie hat mir geholfen, meine Erlebnisse zu verarbeiten und Techniken zu entwickeln, um die Kontrolle über mein Leben zurückzugewinnen. Es war ein harter Weg, aber ich habe gelernt, dass Heilung möglich ist und dass ich nicht allein bin.</p>
             <div className="post-footer">
             <div className="counts">
                 <span>92 Likes</span>
@@ -121,7 +121,7 @@ const Forum = () => {
               <h2>User Name</h2>
               <small>vor 3 Stunden</small>
             </div>
-            <p>Dies ist noch ein weiterer Beispieltext für einen Post.</p>
+            <p>Meine Erfahrung mit einer Essstörung war extrem isolierend. Die ständige Beschäftigung mit meinem Körper und Essen nahm mein ganzes Denken ein. Es war ein Teufelskreis aus Kontrolle und Verlust der Kontrolle. Die Scham und Schuldgefühle machten es mir schwer, darüber zu sprechen. Als ich endlich den Mut fand, Hilfe zu suchen, war ich überrascht, wie viele Menschen ähnliche Kämpfe durchmachen. Die Therapie hat mir geholfen, ein gesünderes Verhältnis zu meinem Körper und Essen zu entwickeln und mir gezeigt, dass ich wertvoll bin, unabhängig von meinem Aussehen.</p>
             <div className="post-footer">
             <div className="counts">
                 <span>73 Likes</span>

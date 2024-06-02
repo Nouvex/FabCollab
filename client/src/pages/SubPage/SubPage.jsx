@@ -39,7 +39,7 @@ const SubPage = ({ isLoggedIn }) => {
             </div>
             <div className="description">
               <h2>Intro</h2>
-              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+              <p>Herzlich Willkommen bei unserer Psychologischen Beratungsstelle! Inmitten der Herausforderungen des Alltags können Belastungen und Krisen jeden von uns treffen. Ob Stress im Beruf, familiäre Konflikte, persönliche Krisen oder psychische Erkrankungen – wir sind hier, um Sie auf Ihrem Weg zu begleiten. Unsere Beratungsstelle bietet Ihnen einen sicheren und vertrauensvollen Raum, in dem Sie Unterstützung und Orientierung finden können. Unser Team aus erfahrenen Psychologen und Therapeuten steht Ihnen mit Fachwissen, Empathie und Diskretion zur Seite. Gemeinsam erarbeiten wir individuelle Lösungswege, um Ihre psychische Gesundheit zu stärken und Ihre Lebensqualität nachhaltig zu verbessern.</p>
             </div>
             <div className="pros-and-cons">
               <div className="pros">
@@ -53,7 +53,7 @@ const SubPage = ({ isLoggedIn }) => {
               <div className="cons">
                 <h3>Contras</h3>
                 <ul>
-                  <li><span className="icon">&#x2716;</span> Begrenzte Parkmöglichkeiten</li>
+                  <li><span className="icon">&#x2716;</span> Schlechte Parkmöglichkeiten</li>
                   <li><span className="icon">&#x2716;</span> Hohe Nachfrage</li>
                 </ul>
               </div>
@@ -70,19 +70,31 @@ const SubPage = ({ isLoggedIn }) => {
             </div>
             <div className="description">
               <h2>Spezialisierung</h2>
-              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+              <p>Unsere Psychologische Beratungsstelle ist spezialisiert auf ein breites Spektrum an psychischen und emotionalen Herausforderungen, denen Menschen in unterschiedlichen Lebensphasen begegnen können. Mit einem interdisziplinären Team aus Psychologen, Therapeuten und Sozialarbeitern bieten wir umfassende Unterstützung und maßgeschneiderte Lösungen für eine Vielzahl von Anliegen.
+                <br></br>
+                <div className="spezialisierung">
+                <br></br><strong>1.</strong>Stress- und Burnout-Prävention
+                <br></br><strong>2.</strong>Depressions- und Angstbewältigung
+                <br></br><strong>3.</strong>Familien- und Paartherapie
+                <br></br><strong>4.</strong>Traumatherapie
+                <br></br><strong>5.</strong>Kinder- und Jugendberatung
+                <br></br><strong>6.</strong>Lebenskrisen und Veränderungssituationen
+                <br></br><strong>7.</strong>Suchtberatung
+                </div>
+                <br></br>
+                <br></br>Wir sind davon überzeugt, dass jeder Mensch das Potenzial hat, seine Herausforderungen zu meistern und ein erfülltes Leben zu führen. Unsere Beratungsstelle ist ein Ort der Hoffnung und Heilung, an dem Sie Unterstützung finden und neue Wege beschreiten können. Zögern Sie nicht, Kontakt mit uns aufzunehmen – wir sind für Sie da.</p>
             </div>
             <div className="top-comments">
               <h2>Top Beiträge aus dem Forum</h2>
               <div className="comments">
                 <div className="comment">
-                  <p>"Dieser Therapeut hat mir sehr geholfen. Sehr empfehlenswert!" - User A</p>
+                  <p>"Ich war aufgrund von anhaltendem Stress und Erschöpfung in der Beratungsstelle und kann nur Positives berichten. Die Therapeuten sind unglaublich einfühlsam und professionell. Schon nach wenigen Sitzungen habe ich gelernt, besser mit meinem Stress umzugehen und meine Work-Life-Balance zu verbessern. Diese Beratungsstelle hat mir wirklich geholfen, wieder zu mir selbst zu finden. Vielen Dank" - User A</p>
                 </div>
                 <div className="comment">
-                  <p>"Tolle Praxis, freundliches Personal und kompetente Beratung." - User B</p>
+                  <p>"Nachdem meine Ehe in eine tiefe Krise geraten war, haben mein Partner und ich uns für eine Paartherapie bei dieser Beratungsstelle entschieden. Wir fühlten uns von Anfang an gut aufgehoben. Die Gespräche waren intensiv, aber stets respektvoll und konstruktiv. Dank der wertvollen Unterstützung haben wir gelernt, besser zu kommunizieren und unsere Beziehung wieder zu stärken. Ich kann diese Beratungsstelle nur weiterempfehlen." - User B</p>
                 </div>
                 <div className="comment">
-                  <p>"Sehr zufrieden mit der Behandlung, fühle mich hier gut aufgehoben." - User C</p>
+                  <p>"Unser Sohn hatte große Schwierigkeiten in der Schule und war sehr zurückgezogen. Die Kinder- und Jugendberatung in dieser Beratungsstelle war ein echter Segen für unsere Familie. Die Therapeuten haben nicht nur unserem Sohn geholfen, sein Selbstvertrauen zurückzugewinnen, sondern uns auch als Eltern wertvolle Tipps gegeben, wie wir ihn besser unterstützen können. Wir sind sehr dankbar für die professionelle und herzliche Betreuung." - User C</p>
                 </div>
               </div>
               <button className="tag-button">Zum Forum</button>
