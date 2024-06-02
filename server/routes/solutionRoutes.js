@@ -52,4 +52,26 @@ router.get('/test/:tagName', async (req, res) => {
   }
 });
 
+
+// GET all solution locations
+// router.get('/locations', async (req, res) => {
+//   try {
+//     // Rufe alle Lösungen ab
+//     const solutions = await Solution.findAll();
+
+//     // Extrahiere die Standorte aus den Lösungen
+//     const locations = solutions.map(solution => solution.standort);
+
+//     // Entferne Duplikate, um nur eindeutige Standorte zu behalten
+//     const uniqueLocations = [...new Set(locations)];
+
+//     // Sende die Standorte als JSON zurück
+//     res.json(uniqueLocations);
+//   } catch (error) {
+//     console.error('Fehler beim Abrufen der Standorte:', error);
+//     res.status(500).json({ error: 'Internal server error' });
+//   }
+// });
+
+
 module.exports = router;

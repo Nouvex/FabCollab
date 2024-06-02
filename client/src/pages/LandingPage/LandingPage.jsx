@@ -1,3 +1,4 @@
+// Importiere useEffect und useState aus React
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"; // Importiere useNavigate
 import "./LandingPage.css";
@@ -9,6 +10,7 @@ const LandingPage = () => {
   const [tags, setTags] = useState([]);
   const [solutions, setSolutions] = useState([]);
   const [selectedTags, setSelectedTags] = useState([]);
+  const [locations, setLocations] = useState([]); // Zustand für Standorte hinzufügen
   const navigate = useNavigate(); // Initialisiere useNavigate
 
   const showMoreResults = () => {
@@ -17,7 +19,7 @@ const LandingPage = () => {
 
   const fetchSolutions = (tags) => {
     if (tags.length > 0) {
-      fetch(`${backend}/solutions?tags=${tags.join(',')}`)
+      fetch(`${backend}/solutions?tags=${tags.join(",")}`)
         .then((response) => response.json())
         .then((solutions) => {
           setSolutions(solutions);
@@ -46,6 +48,19 @@ const LandingPage = () => {
 
     fetchSolutions(updatedTags);
   };
+  const handleLocations = () => {
+    const standorte = []; // Array zum Speichern der Standorte
+
+    solutions.forEach((solution) => {
+      standorte.push(solution.standort); // Füge jeden Standort zum Array hinzu
+    });
+
+    setLocations(standorte); // Setze die Standorte im State
+  };
+
+  useEffect(() => {
+    handleLocations(); // Rufe handleLocations auf, wenn solutions sich ändern
+  }, [solutions]); // useEffect wird jedes Mal ausgeführt, wenn solutions sich ändern
 
   useEffect(() => {
     fetch(`${backend}/tag`)
@@ -61,7 +76,7 @@ const LandingPage = () => {
   }, []);
 
   const handleResultClick = (solution) => {
-    navigate('/sub', { state: { solution } }); // Navigiere zur SubPage und übergebe die Daten
+    navigate("/sub", { state: { solution } }); // Navigiere zur SubPage und übergebe die Daten
   };
 
   const filteredSolutions = solutions.filter((solution) => {
@@ -90,44 +105,88 @@ const LandingPage = () => {
           <button
             key={index}
             className={
-              selectedTags.includes(tag.name) ? "tag-button selected" : "tag-button"
+              selectedTags.includes(tag.name)
+                ? "tag-button selected"
+                : "tag-button"
             }
             onClick={() => toggleTag(tag)}
           >
             {tag.name}
           </button>
         ))}
+
+        <select
+          disabled={!locations || locations.length === 0} // Deaktiviert das Dropdown-Menü, wenn locations leer sind oder nicht vorhanden
+          onChange={(e) => {
+            handleLocations();
+            const selectedLocation = e.target.value;
+
+            if (locations.length > 0) {
+              if (selectedLocation === "") {
+                fetchSolutions(selectedTags); // Wenn "Alle Standorte" ausgewählt ist, hole alle Lösungen
+              } else {
+                // Wenn ein bestimmter Standort ausgewählt ist, filtere die Lösungen entsprechend
+                const filteredSolutions = solutions.filter(
+                  (solution) => solution.standort === selectedLocation
+                );
+                setSolutions(filteredSolutions); // Setze die gefilterten Lösungen
+              }
+            }
+          }}
+          value=""
+        >
+          <option value="">Alle Standorte</option>
+          {locations.length > 0 ? (
+            locations.map((location, index) => (
+              <option key={index} value={location}>
+                {location}
+              </option>
+            ))
+          ) : (
+            <option value="" disabled>
+              Keine Standorte verfügbar
+            </option>
+          )}
+        </select>
       </div>
 
       <div className="content-section">
         <div className="results-section">
           {filteredSolutions.length > 0 ? (
-            filteredSolutions.slice(0, visibleResults).map((solution, index) => (
-              <div
-                key={index}
-                className="result-item"
-                onClick={() => handleResultClick(solution)} // Füge einen onClick-Handler hinzu
-              >
-                <div className="result-image">
-                  <img src="https://via.placeholder.com/150" alt="Beispiel" />
-                </div>
-                <div className="result-content">
-                  <h3>{solution.name}</h3>
-                  <div className="result-details">
-                    <p>Beschreibung: {solution.short_description}</p>
-                    <p>Link: <a href={solution.link}>{solution.link}</a></p>
-                    <p>Standort: {solution.standort}</p>
+            filteredSolutions
+              .slice(0, visibleResults)
+              .map((solution, index) => (
+                <div
+                  key={index}
+                  className="result-item"
+                  onClick={() => handleResultClick(solution)} // Füge einen onClick-Handler hinzu
+                >
+                  <div className="result-image">
+                    <img src="https://via.placeholder.com/150" alt="Beispiel" />
                   </div>
-                  <div className="result-tags">
-                    {solution.tags.map((tag, tagIndex) => (
-                      <span key={tagIndex} className="result-tag">{tag}</span>
-                    ))}
+                  <div className="result-content">
+                    <h3>{solution.name}</h3>
+                    <div className="result-details">
+                      <p>Beschreibung: {solution.short_description}</p>
+                      <p>
+                        Link: <a href={solution.link}>{solution.link}</a>
+                      </p>
+                      <p>Standort: {solution.standort}</p>
+                    </div>
+                    <div className="result-tags">
+                      {solution.tags.map((tag, tagIndex) => (
+                        <span key={tagIndex} className="result-tag">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))
+              ))
           ) : (
-            <p className="no-results-message">Keine Ergebnisse gefunden für die ausgewählten Tags.</p>
+            <p className="no-results-message">
+              Keine Ergebnisse gefunden für die ausgewählten Tags.
+            </p>
           )}
           {visibleResults < filteredSolutions.length && (
             <button className="show-more-button" onClick={showMoreResults}>
@@ -148,13 +207,22 @@ const LandingPage = () => {
         <h2>Top Beiträge aus dem Forum</h2>
         <div className="comments">
           <div className="comment">
-            <p>"Dieser Therapeut hat mir sehr geholfen. Sehr empfehlenswert!" - User A</p>
+            <p>
+              "Dieser Therapeut hat mir sehr geholfen. Sehr empfehlenswert!" -
+              User A
+            </p>
           </div>
           <div className="comment">
-            <p>"Tolle Praxis, freundliches Personal und kompetente Beratung." - User B</p>
+            <p>
+              "Tolle Praxis, freundliches Personal und kompetente Beratung." -
+              User B
+            </p>
           </div>
           <div className="comment">
-            <p>"Sehr zufrieden mit der Behandlung, fühle mich hier gut aufgehoben." - User C</p>
+            <p>
+              "Sehr zufrieden mit der Behandlung, fühle mich hier gut
+              aufgehoben." - User C
+            </p>
           </div>
         </div>
         <button className="tag-button">Zum Forum</button>

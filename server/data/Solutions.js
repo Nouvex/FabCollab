@@ -1,6 +1,5 @@
 const { Sequelize, DataTypes, Model } = require('sequelize');
 const Tag = require('./Tag.js')
-const SolutionTag = require('./SolutionTag.js');
 const sequelize = require('../database.js');
 
 class Solutions extends Model {
@@ -52,7 +51,7 @@ Solutions.init({
 
 
 
-module.exports = Solutions;
+
 
 async function findAll() {
     try {
@@ -85,3 +84,6 @@ Solutions.getSolutionsForTag = async function(tagName) {
         throw error;
     }
 }
+
+
+module.exports = Solutions;
