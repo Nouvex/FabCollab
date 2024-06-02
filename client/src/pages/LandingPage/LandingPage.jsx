@@ -122,7 +122,7 @@ const LandingPage = ({ isLoggedIn }) => {
               <div
                 key={index}
                 className="result-item"
-                onClick={() => handleResultClick(solution)} // Füge einen onClick-Handler hinzu
+                onClick={() => handleResultClick(solution)}
               >
                 <div className="result-image">
                   {solution.visual ? (
@@ -161,15 +161,15 @@ const LandingPage = ({ isLoggedIn }) => {
 
         <div className="info-section">
           <h2>Notfall Hilfe</h2>
-          <p>Hotline: 123-456-789</p>
+          <p>Hotline: 0800-123-4567</p>
           <p>Email: info@fabcollab.com</p>
           <p>Adresse: Beispielstraße 1, 12345 Musterstadt</p>
           <h2>Suizid Hotline</h2>
-          <p>Hotline: 123-456-789</p>
+          <p>Hotline: 0800-123-4567</p>
           <p>Email: info@fabcollab.com</p>
           <p>Adresse: Beispielstraße 1, 12345 Musterstadt</p>
           <h2>Notdienst</h2>
-          <p>Hotline: 123-456-789</p>
+          <p>Hotline: 0800-123-4567</p>
           <p>Email: info@fabcollab.com</p>
           <p>Adresse: Beispielstraße 1, 12345 Musterstadt</p>
         </div>
