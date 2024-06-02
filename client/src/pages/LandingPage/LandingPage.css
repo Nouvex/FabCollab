@@ -187,17 +187,19 @@ p {
 .info-section {
   flex: 1;
   max-width: 400px;
-  background-color: #FF5733; /* Alternative Farbe für Notfall Hilfe */
+  background-color: white; /* Alternative Farbe für Notfall Hilfe */
   padding: 1rem;
   border-radius: 4px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
   margin-left: 2rem;
-  color: #FFFFFF; /* Weiß */
+  color: black; /* Weiß */
 }
 
-.info-section h3,
+.info-section h2 {
+  color:#28A745;
+}
 .info-section p {
-  color: #FFFFFF; /* Weiß */
+  color: black; /* Weiß */
 }
 
 /* Sektion für Top-Kommentare aus dem Forum */

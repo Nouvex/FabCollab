@@ -160,7 +160,15 @@ const LandingPage = ({ isLoggedIn }) => {
         </div>
 
         <div className="info-section">
-          <h3>Notfall Hilfe</h3>
+          <h2>Notfall Hilfe</h2>
+          <p>Hotline: 123-456-789</p>
+          <p>Email: info@fabcollab.com</p>
+          <p>Adresse: Beispielstraße 1, 12345 Musterstadt</p>
+          <h2>Suizid Hotline</h2>
+          <p>Hotline: 123-456-789</p>
+          <p>Email: info@fabcollab.com</p>
+          <p>Adresse: Beispielstraße 1, 12345 Musterstadt</p>
+          <h2>Notdienst</h2>
           <p>Hotline: 123-456-789</p>
           <p>Email: info@fabcollab.com</p>
           <p>Adresse: Beispielstraße 1, 12345 Musterstadt</p>
